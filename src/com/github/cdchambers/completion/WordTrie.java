@@ -1,4 +1,4 @@
-package com.github.cdchambers.completion.trie;
+package com.github.cdchambers.completion;
 
 import java.util.ArrayList;
 import java.util.Collection;
