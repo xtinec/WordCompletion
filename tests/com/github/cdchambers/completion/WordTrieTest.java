@@ -1,4 +1,4 @@
-package com.chambers.christine.completion.trie;
+package com.github.cdchambers.completion;
 
 import static org.junit.Assert.*;
 
@@ -106,5 +106,19 @@ public class WordTrieTest {
     assertContentsInOrder(wt.getCompletions("foo", 2), "foo", "food");
     assertContentsInOrder(wt.getCompletions("ba", 3), "bad", "band", "bar");
     assertContentsInOrder(wt.getCompletions("do", 2));
+  }
+  
+  @Test
+  public void getCompletionOnEmpty() {
+    wt.add("foot");
+    wt.add("foo");
+    wt.add("food");
+    wt.add("bar");
+    wt.add("baz");
+    wt.add("fox");
+    wt.add("bad");
+    wt.add("band");
+    
+    assertContentsInOrder(wt.getCompletions("", 3), "bad", "band", "bar");
   }
 }
