@@ -13,22 +13,51 @@
     <script src="WordSuggestion.js"></script>
     
     <style>
-      #suggestion {
-        width: 100px;
-        min-height: 20px;
-        list-style-type: none;
-        border: 1px solid black;
+      
+      /* default (inactive field) */
+      #input{
+        width: 200px;
+        padding: 3px;
+        font-size: 110%;
+        vertical-align: middle;
       }
       
-      #suggestion li {
-        
+      
+      .sf_inactive{
+        border: 2px #3d91a5 solid;
+        background: #3d91a5;
+        color: #b4d3db;
+      }
+      
+      .suggestion {
+        position: relative;
+      }
+      
+      .suggestion ul {
+        width: 200px;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        background: #FEFFEF;
+        top: 0;
+        left: 0;
+      }
+      
+      .suggestion li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: block;
+        text-indent: 5px;
       }
     </style>
   </head>
 
   <body>
     <h3>Start typing to get up to 5 word suggestions</h3>
-    <input type="text" id="input" size=20 onkeyup="getSuggestions()"/>
-    <ul id="suggestion"/>
+    <input type="text" id="input" autocomplete="off"/>
+    <div class="suggestion">
+      <ul id="suggestionList" tabindex="-1"/>
+    </div>
   </body>
 </html>

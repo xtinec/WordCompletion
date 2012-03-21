@@ -14,7 +14,7 @@ function getSuggestions() {
 		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 	xmlhttp.onreadystatechange=function(){
-		var suggestionBox = document.getElementById("suggestion");
+		var suggestionBox = document.getElementById("suggestionList");
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			var suggestions = JSON.parse(xmlhttp.responseText);
 			suggestionBox.innerHTML="";
